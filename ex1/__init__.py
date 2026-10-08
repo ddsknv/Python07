@@ -1,1 +1,1 @@
-from .new import HealingCreatureFactory, TransformCreatureFactory
+from .new import HealingCreatureFactory, TransformCreatureFactory  # noqa: F401

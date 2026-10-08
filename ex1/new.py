@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from ex0 import CreatureFactory, Creature
 
+
 class HealCapability(ABC):
 
     @abstractmethod
@@ -16,6 +17,7 @@ class TransformCapability(ABC):
     @abstractmethod
     def transform(self) -> str:
         pass
+
     @abstractmethod
     def revert(self) -> str:
         pass
@@ -44,7 +46,6 @@ class HealingCreatureFactory(CreatureFactory):
     def create_base(self) -> Creature:
         return Sproutling("Sproutling", "Grass")
 
-
     def create_evolved(self) -> Creature:
         return Bloomelle("Bloomelle", "Grass/Fairy")
 
@@ -62,7 +63,7 @@ class Shiftling(Creature, TransformCapability):
     def revert(self) -> str:
         self.is_transformed = False
         return "Shiftling returns to normal."
-    
+
     def attack(self) -> str:
         if not self.is_transformed:
             return "Shiftling attacks normally."
@@ -83,18 +84,18 @@ class Morphagon(Creature, TransformCapability):
     def revert(self) -> str:
         self.is_transformed = False
         return "Morphagon stabilizes its form."
-    
+
     def attack(self) -> str:
         if not self.is_transformed:
             return "Morphagon attacks normally."
         else:
             return "Morphagon unleashes a devastating morph strike!"
-    
+
+
 class TransformCreatureFactory(CreatureFactory):
 
     def create_base(self) -> Creature:
         return Shiftling("Shiftling", "Normal")
-
 
     def create_evolved(self) -> Creature:
         return Morphagon("Morphagon", "Normal/Dragon")

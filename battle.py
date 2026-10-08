@@ -31,5 +31,6 @@ def main() -> None:
     print("\nTesting battle!")
     battle(FlameFactory(), AquaFactory())
 
+
 if __name__ == "__main__":
     main()

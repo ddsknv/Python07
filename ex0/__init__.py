@@ -1,1 +1,6 @@
-from .creatures import AquaFactory, FlameFactory, CreatureFactory, Creature
+from .creatures import (  # noqa: F401
+    AquaFactory,
+    FlameFactory,
+    CreatureFactory,
+    Creature
+)

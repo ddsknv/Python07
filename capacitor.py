@@ -1,5 +1,5 @@
 from ex1 import HealingCreatureFactory, TransformCreatureFactory
-
+from typing import cast
 
 def main() -> None:
 
